@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SimplePush Test</title>
+  <!-- Building blocks -->
+  <link rel="stylesheet" href="style/action_menu.css">
+  <link rel="stylesheet" href="style/buttons.css">
+  <link rel="stylesheet" href="style/confirm.css">
+  <link rel="stylesheet" href="style/edit_mode.css">
+  <link rel="stylesheet" href="style/headers.css">
+  <link rel="stylesheet" href="style/input_areas.css">
+  <!--link rel="stylesheet" href="style/responsive.css"-->
+  <link rel="stylesheet" href="style/status.css">
+  <link rel="stylesheet" href="style/switches.css">
+  <!--link rel="stylesheet" href="style_unstable/drawer.css"-->
+  <link rel="stylesheet" href="style_unstable/lists.css">
+  <link rel="stylesheet" href="style_unstable/progress_activity.css">
+  <link rel="stylesheet" href="style_unstable/scrolling.css">
+  <link rel="stylesheet" href="style_unstable/seekbars.css">
+  <link rel="stylesheet" href="style_unstable/tabs.css">
+  <link rel="stylesheet" href="style_unstable/toolbars.css">
+
+  <link href="icons/styles/media_icons.css" type="text/css" rel="stylesheet"></link>
+  <link href="icons/styles/action_icons.css" type="text/css" rel="stylesheet"></link>
+  
+  <!-- Util CSS: some extra tricks -->
+  <link rel="stylesheet" href="util.css">
+
+  <!-- Additional markup to make Building Blocks kind of cross browser -->
+  <link rel="stylesheet" href="cross_browser.css">
+
+</head>
+<body>
+  <section class="frame" role="region">
+    <header>
+      <button id="closeButton"><span class="icon icon-close">close</span></button>
+      <h1>SimplePush Test</h1>
+    </header>
+  </section>
+  <section id="content" role="region">
+    <ul>
+      <li>
+            <button id="subscribeButton">Subscribe</button>
+      </li>
+      <li>
+            <button id="unsubscribeButton">Unbsubscribe</button>
+      </li>
+    </ul>
+  </section>
+  <section class="hide" role="status" id="lastMessage">
+    <p><strong></strong></p>
+  </section>
+  <script src="js/app.js"></script>
+</body>
+</html>
+

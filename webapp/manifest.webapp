@@ -1,0 +1,24 @@
+{
+  "name": "SimplePush",
+  "description": "Firefox OS SimplePush Example",
+  "launch_path": "/index.html",
+  "orientation": "portrait",
+  "developer": {
+    "name": "Francisco Jordano",
+    "url": "http://github.com/arcturus"
+  },
+  "default_locale": "en",
+  "icons": {
+    "60": "/icons/icon.png"
+  },
+  "permissions": {
+    "desktop-notification": {},
+    "push": {},
+    "systemXHR": {}
+  },
+  "messages": [
+    { "push": "/index.html"},
+    { "push-register": "/index.html"},
+    { "notification": "/index.html" }
+  ]
+}
