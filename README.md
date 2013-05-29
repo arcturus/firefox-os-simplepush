@@ -17,4 +17,4 @@ Post your channel id as post parameter 'client' to url: http://simplepushclient.
 Post your channel id as 'client' and your message as 'message' to url: http://simplepushclient.eu01.aws.af.cm/v1/
 
 * Receive a message
-Get your channel id as get parameter 'client' to url: http://simplepushclient.eu01.aws.af.cm/v1/<message number>?client=<client>
+Get your channel id as get parameter 'client' to url: http://simplepushclient.eu01.aws.af.cm/v1/[message number]?client=[client]
