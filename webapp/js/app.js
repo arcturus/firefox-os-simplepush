@@ -191,7 +191,7 @@ var SimplePushTest = function SimplePushTest() {
 
   return {
     'init': init,
-    'getAppReference': getAppReference
+    'getAppReference': getAppReference,
     'onPushMessage': onPushMessage
   };
 
