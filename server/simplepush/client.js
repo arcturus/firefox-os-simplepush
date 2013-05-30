@@ -75,7 +75,7 @@ var Client = function Client() {
       return;
     }
 
-    messages.findOne({'client': params.client}).
+    messages.find({'client': params.client}).
       count().done(function onDone(num) {
         if (num == 0) {
           createNewClient(params.client, function onCreated(obj) {
