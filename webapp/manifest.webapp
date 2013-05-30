@@ -3,6 +3,7 @@
   "description": "Firefox OS SimplePush Example",
   "launch_path": "/index.html",
   "orientation": "portrait",
+  "type": "privileged",
   "developer": {
     "name": "Francisco Jordano",
     "url": "http://github.com/arcturus"

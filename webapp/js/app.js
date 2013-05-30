@@ -18,7 +18,10 @@ var SimplePushTest = function SimplePushTest() {
     if (closeButton == null) {
       closeButton = document.getElementById('closeButton');
       subscribeButton = document.getElementById('subscribeButton');
-      unsubscribeButton = document.getElementById('unsubscribeButton');  
+      unsubscribeButton = document.getElementById('unsubscribeButton');
+      closeButton.addEventListener('click', handleEvent);
+      subscribeButton.addEventListener('click', handleEvent);
+      unsubscribeButton.addEventListener('click', handleEvent);
     }
     
     // localStorage is DEVIL, but have no time :P
@@ -62,6 +65,8 @@ var SimplePushTest = function SimplePushTest() {
       return;
     }
 
+    subscribeButton.disabled = true;
+
     // Here comes the magic
     var req = navigator.push.register();
 
@@ -78,6 +83,8 @@ var SimplePushTest = function SimplePushTest() {
       data.append('client', endpoint);
       doRequest('POST', '/api/v1/register', data, function onRequest(err, res) {
         if (err) {
+          subscribeButton.disabled = false;
+          console.error('Error sending our channel ::: ' + err.target.status);
           alert('Could not register channel ' + endpoint);
         } else {
           localStorage.channel = endpoint;
@@ -108,7 +115,7 @@ var SimplePushTest = function SimplePushTest() {
   // With our current implementation we get that sequence number, our channel
   // and ask our server (not the push server), to deliver the message for us.
   var onPushMessage = function onPushMessage(version) {
-    doRequest('GET', '/api/v1/' + version + '?client=' + channel,
+    doRequest('GET', '/api/v1/' + version + '?client=' + channel, null,
       function onRequest(err, data) {
         if (err) {
           console.error(err);
@@ -148,11 +155,8 @@ var SimplePushTest = function SimplePushTest() {
   // Perform a request against the simplepushclient server
   var doRequest = function doPost(type, endPoint, data, cb) {
     var uri = 'http://simplepushclient.eu01.aws.af.cm' + endPoint;
-    var xhr = new XMLHttpRequest({
-      mozSystem: true
-    });
+    var xhr = new XMLHttpRequest({mozSystem: true});
 
-    xhr.open(type, uri, true);
     xhr.onload = function onLoad(evt) {
       if (xhr.status === 200 || xhr.status === 0) {
         cb(null, xhr.response);
@@ -160,6 +164,11 @@ var SimplePushTest = function SimplePushTest() {
         cb(xhr.status);
       }
     };
+    xhr.open(type, uri, true);
+    xhr.onerror = function onError(e) {
+      console.error('onerror en xhr ' + xhr.status);
+      cb(e);
+    }
     xhr.send(data);
   };
 
