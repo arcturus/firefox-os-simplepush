@@ -19,7 +19,6 @@
   },
   "messages": [
     { "push": "/index.html"},
-    { "push-register": "/index.html"},
     { "notification": "/index.html" }
   ]
 }
