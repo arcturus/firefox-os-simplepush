@@ -18,3 +18,6 @@ Post your channel id as 'client' and your message as 'message' to url: http://si
 
 * Receive a message
 Get your channel id as get parameter 'client' to url: http://simplepushclient.eu01.aws.af.cm/api/v1/[message number]?client=[client]
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/arcturus/firefox-os-simplepush/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
