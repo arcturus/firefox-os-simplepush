@@ -11,7 +11,7 @@
     "url": "https://github.com/arcturus/firefox-os-simplepush.git"
   },
   "dependencies" : {
-    "express": "*",
+    "express": "~3.x",
     "mongoq": "*",
     "request": "*"
   },
