@@ -154,7 +154,7 @@ var SimplePushTest = function SimplePushTest() {
 
   // Perform a request against the simplepushclient server
   var doRequest = function doPost(type, endPoint, data, cb) {
-    var uri = 'http://simplepushclient.eu01.aws.af.cm' + endPoint;
+    var uri = 'https://foxypush.herokuapp.com' + endPoint;
     var xhr = new XMLHttpRequest({mozSystem: true});
 
     xhr.onload = function onLoad(evt) {
